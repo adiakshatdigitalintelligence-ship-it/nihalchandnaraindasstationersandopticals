@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nihalchand Naraindas Stationers & Opticals — Fine Stationery & Eyewear</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Inter & Playfair Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            cream: '#FAF9F5',
+            sand: '#F3EFEA',
+            sage: '#E2E8DF',
+            blush: '#F9ECEB',
+            terracotta: '#D97757',
+            charcoal: '#2D2D2D',
+            whatsapp: '#25D366',
+            whatsappDark: '#1EBE5B'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FAF9F5;
+      color: #2D2D2D;
+      font-family: 'Inter', sans-serif;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF9F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D1CBC1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B8B0A2;
+    }
+  </style>
+</head>
+<body class="bg-cream text-charcoal antialiased min-h-screen flex flex-col selection:bg-terracotta selection:text-white">
+
+<!-- Main Navigation Bar -->
+<header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-sand shadow-sm transition-all">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+    <!-- Mobile Menu Toggle Button -->
+    <button id="mobile-menu-btn" class="md:hidden text-charcoal hover:text-terracotta p-2 focus:outline-none transition-colors" aria-label="Open Menu">
+      <i class="fa-solid fa-bars text-xl"></i>
+    </button>
+
+    <!-- Brand Logo -->
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-full bg-blush flex items-center justify-center text-terracotta group-hover:scale-105 transition-transform shadow-sm">
+        <i class="fa-solid fa-feather text-lg"></i>
+      </div>
+      <div class="flex flex-col">
+                    <span class="font-serif text-lg sm:text-xl font-bold tracking-tight text-charcoal leading-tight">
+                        Nihalchand Naraindas
+                    </span>
+        <span class="text-[10px] uppercase tracking-widest text-stone-500 font-semibold">Stationers & Opticals</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm">
+      <a href="#shop" class="text-charcoal hover:text-terracotta transition-colors">Catalog</a>
+      <a href="#categories" class="text-charcoal hover:text-terracotta transition-colors">Categories</a>
+      <a href="#about" class="text-charcoal hover:text-terracotta transition-colors">Our Legacy</a>
+      <a href="#reviews" class="text-charcoal hover:text-terracotta transition-colors">Reviews</a>
+    </nav>
+
+    <!-- Right Actions (Search, Wishlist, Direct WhatsApp) -->
+    <div class="flex items-center space-x-3 sm:space-x-4">
+      <button id="search-toggle-btn" class="p-2 text-charcoal hover:text-terracotta transition-colors flex items-center gap-1 text-sm font-medium" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+        <span class="hidden sm:inline text-xs text-stone-500">Search</span>
+      </button>
+
+      <!-- Wishlist Toggle (Heart Icon) -->
+      <button id="wishlist-toggle-btn" class="relative p-2 text-charcoal hover:text-red-500 transition-colors flex items-center gap-1.5" aria-label="Wishlist">
+        <i class="fa-solid fa-heart text-xl text-stone-700 hover:text-red-500"></i>
+        <span id="wishlist-badge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-sm">0</span>
+      </button>
+
+      <!-- Direct WhatsApp Header Link -->
+      <a href="https://wa.me/15550192834?text=Hello%20Nihalchand%20Naraindas%20Stationers%20%26%20Opticals%2C%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="hidden sm:flex items-center gap-2 px-4 py-2 bg-whatsapp hover:bg-whatsappDark text-white rounded-full font-medium text-xs shadow-md transition-all">
+        <i class="fa-brands fa-whatsapp text-base"></i>
+        <span>Inquire Now</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Search Bar & Live Dropdown -->
+  <div id="search-container" class="hidden bg-sand border-b border-stone-200 py-4 px-4 shadow-inner transition-all relative">
+    <div class="max-w-3xl mx-auto relative">
+      <div class="relative flex items-center">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 text-stone-400"></i>
+        <input type="text" id="search-input" placeholder="Search pens, journals, eyeglasses, frames, reading glasses, sunglasses..." class="w-full pl-11 pr-24 py-3 rounded-full bg-white border border-stone-300 focus:outline-none focus:border-terracotta text-sm shadow-sm" autocomplete="off">
+        <button id="clear-search-btn" class="hidden absolute right-12 text-xs font-semibold text-stone-400 hover:text-stone-700 px-2 py-1 bg-stone-100 rounded-md">Clear</button>
+        <button id="search-close-btn" class="absolute right-4 text-stone-400 hover:text-charcoal p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Live Auto-Suggest Search Results Dropdown -->
+      <div id="search-suggestions" class="hidden absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-stone-200 z-50 max-h-80 overflow-y-auto divide-y divide-stone-100"></div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Drawer Navigation -->
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden transition-opacity">
+  <div class="absolute left-0 top-0 bottom-0 w-80 bg-cream shadow-2xl p-6 flex flex-col justify-between transform -translate-x-full transition-transform duration-300" id="mobile-menu-panel">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-sand">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-blush flex items-center justify-center text-terracotta">
+            <i class="fa-solid fa-feather text-sm"></i>
+          </div>
+          <span class="font-serif text-base font-bold">Nihalchand Naraindas</span>
+        </div>
+        <button id="mobile-menu-close" class="text-stone-500 hover:text-charcoal p-1">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col space-y-4 mt-6 font-medium text-base">
+        <a href="#shop" class="mobile-nav-link text-charcoal hover:text-terracotta py-2">Catalog</a>
+        <a href="#categories" class="mobile-nav-link text-charcoal hover:text-terracotta py-2">Categories</a>
+        <a href="#about" class="mobile-nav-link text-charcoal hover:text-terracotta py-2">Our Legacy</a>
+        <a href="#reviews" class="mobile-nav-link text-charcoal hover:text-terracotta py-2">Reviews</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-sand space-y-4">
+      <a href="https://wa.me/15550192834?text=Hello%20Nihalchand%20Naraindas%20Stationers%20%26%20Opticals%2C%20I%20have%20an%20inquiry." target="_blank" class="w-full flex items-center justify-center gap-2 py-3 bg-whatsapp text-white rounded-full text-sm font-semibold shadow">
+        <i class="fa-brands fa-whatsapp text-lg"></i> Inquire on WhatsApp
+      </a>
+      <p class="text-xs text-stone-500 text-center">&copy; 2026 Nihalchand Naraindas Stationers & Opticals.</p>
+    </div>
+  </div>
+</div>
+
+<main class="flex-grow">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-sand/50 to-cream py-16 md:py-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6 text-center md:text-left z-10">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sage/60 text-stone-800 text-xs font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-glasses text-terracotta text-xs"></i> Fine Stationery & Premium Eyewear
+                    </span>
+        <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-charcoal leading-tight">
+          Nihalchand Naraindas<br>
+          <span class="text-terracotta italic font-normal text-2xl sm:text-4xl">Stationers & Opticals</span>
+        </h1>
+        <p class="text-stone-600 text-base sm:text-lg max-w-lg mx-auto md:mx-0 font-normal leading-relaxed">
+          Your trusted destination for premium fountain pens, fine journals, handcrafted desk organizers, designer spectacles, and prescription optics.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
+          <!-- Primary WhatsApp Inquiry Button -->
+          <a href="https://wa.me/15550192834?text=Hello%20Nihalchand%20Naraindas%20Stationers%20%26%20Opticals%2C%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-whatsapp hover:bg-whatsappDark text-white font-medium text-center shadow-lg shadow-emerald-600/20 transition-all hover:scale-105 flex items-center justify-center gap-2 text-base">
+            <i class="fa-brands fa-whatsapp text-xl"></i> Inquire on WhatsApp
+          </a>
+          <a href="#shop" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white hover:bg-stone-50 border border-stone-300 text-charcoal font-medium text-center transition-all">
+            Browse Collection
+          </a>
+        </div>
+        <!-- Trust Badges -->
+        <div class="pt-6 grid grid-cols-3 gap-4 border-t border-stone-200/60 text-stone-500 text-xs font-medium">
+          <div class="flex items-center justify-center md:justify-start gap-2">
+            <i class="fa-solid fa-certificate text-terracotta text-sm"></i>
+            <span>Trusted Legacy</span>
+          </div>
+          <div class="flex items-center justify-center md:justify-start gap-2">
+            <i class="fa-brands fa-whatsapp text-whatsapp text-sm"></i>
+            <span>Instant WhatsApp Support</span>
+          </div>
+          <div class="flex items-center justify-center md:justify-start gap-2">
+            <i class="fa-solid fa-eye text-terracotta text-sm"></i>
+            <span>Precision Eyewear</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Gallery -->
+      <div class="relative flex justify-center items-center">
+        <div class="absolute -top-6 -left-6 w-72 h-72 bg-sage/40 rounded-full blur-2xl -z-10"></div>
+        <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-blush/60 rounded-full blur-2xl -z-10"></div>
+
+        <div class="relative grid grid-cols-2 gap-4 w-full max-w-md">
+          <div class="space-y-4">
+            <div class="overflow-hidden rounded-2xl shadow-xl border-4 border-white aspect-[4/5] bg-stone-200">
+              <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=600&auto=format&fit=crop" alt="Leather Journal" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x500/F3EFEA/2D2D2D?text=Stationery'">
+            </div>
+            <div class="overflow-hidden rounded-2xl shadow-lg border-4 border-white aspect-square bg-stone-200">
+              <img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?q=80&w=400&auto=format&fit=crop" alt="Designer Frames" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/F3EFEA/2D2D2D?text=Opticals'">
+            </div>
+          </div>
+          <div class="space-y-4 pt-8">
+            <div class="overflow-hidden rounded-2xl shadow-lg border-4 border-white aspect-square bg-stone-200">
+              <img src="https://images.unsplash.com/photo-1585336261022-6fc0e25914a2?q=80&w=400&auto=format&fit=crop" alt="Fountain Pen" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/F3EFEA/2D2D2D?text=Pens'">
+            </div>
+            <div class="overflow-hidden rounded-2xl shadow-xl border-4 border-white aspect-[4/5] bg-stone-200">
+              <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop" alt="Sunglasses" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x500/F3EFEA/2D2D2D?text=Sunglasses'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Section & Category Filters -->
+  <section id="shop" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="text-terracotta uppercase tracking-widest text-xs font-bold">Curated Collection</span>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2 text-charcoal">Stationery & Optical Collection</h2>
+      <p class="text-stone-600 text-sm sm:text-base mt-2">Explore our products below. Save your favorites to your Wishlist or send an inquiry directly on WhatsApp.</p>
+
+      <!-- Active Search Indicator Banner -->
+      <div id="search-status-banner" class="hidden mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-terracotta/10 text-terracotta text-xs font-semibold">
+        <span>Searching for: "<strong id="active-search-query"></strong>"</span>
+        <button id="clear-search-banner-btn" class="hover:text-stone-900 ml-1"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </div>
+
+    <!-- Category Filter Buttons -->
+    <div id="category-filters" class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
+      <button data-category="all" class="cat-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-terracotta text-white shadow-sm">
+        All Products
+      </button>
+      <button data-category="Stationery" class="cat-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-white hover:bg-stone-100 text-stone-700 border border-stone-200">
+        Stationery & Writing
+      </button>
+      <button data-category="Eyeglasses" class="cat-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-white hover:bg-stone-100 text-stone-700 border border-stone-200">
+        Eyeglasses & Frames
+      </button>
+      <button data-category="Sunglasses" class="cat-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-white hover:bg-stone-100 text-stone-700 border border-stone-200">
+        Sunglasses
+      </button>
+      <button data-category="Desk Accessories" class="cat-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-white hover:bg-stone-100 text-stone-700 border border-stone-200">
+        Desk Accessories
+      </button>
+    </div>
+
+    <!-- Product Grid Container -->
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8"></div>
+
+    <!-- Empty Search / Filter State -->
+    <div id="no-products" class="hidden text-center py-20 bg-white rounded-3xl border border-stone-200/80 shadow-sm my-6 p-8">
+      <div class="w-16 h-16 bg-stone-100 text-stone-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <h3 class="font-serif text-xl font-bold text-charcoal">No products found</h3>
+      <p class="text-stone-500 text-sm mt-1 max-w-md mx-auto">We couldn't find any items matching your search or selected filter. Try searching for "Pen", "Glasses", "Journal", or "Sunglasses".</p>
+      <button id="reset-filter-btn" class="mt-5 px-6 py-2.5 rounded-full bg-terracotta text-white text-sm font-medium shadow hover:bg-terracotta/90 transition-all">
+        Reset Search & Filters
+      </button>
+    </div>
+  </section>
+
+  <!-- Custom Orders & Prescription Glasses Inquiry Section -->
+  <section class="bg-sand py-16 my-8 border-y border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4">
+        <span class="px-3.5 py-1 rounded-full bg-blush text-terracotta text-xs font-semibold uppercase tracking-wider">Custom Services</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">Prescription Lens Fitting & Custom Stationery Monogramming</h2>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+          At Nihalchand Naraindas Stationers & Opticals, we offer bespoke services ranging from custom leather journal embossing to precision prescription lens testing and frame fitting. Share your prescription or custom stationery request with us on WhatsApp for instant guidance.
+        </p>
+        <div class="pt-2">
+          <a href="https://wa.me/15550192834?text=Hello%20Nihalchand%20Naraindas%2C%20I%20would%20like%20to%20inquire%20about%20prescription%20glasses%20%2F%20custom%20stationery." target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-whatsapp hover:bg-whatsappDark text-white font-medium text-sm transition-all shadow-md">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Direct WhatsApp Inquiry
+          </a>
+        </div>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden shadow-xl h-72 sm:h-80 bg-stone-300">
+        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=800&auto=format&fit=crop" alt="Opticals & Stationery Flatlay" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x400/E2E8DF/2D2D2D?text=Stationery+%26+Opticals'">
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section -->
+  <section id="reviews" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+      <div class="text-center md:text-left">
+        <span class="text-terracotta uppercase tracking-widest text-xs font-bold">Client Feedback</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2 text-charcoal">Customer Reviews & Experiences</h2>
+        <p class="text-stone-600 text-sm sm:text-base mt-2">Read feedback from our valued customers or share your own store experience.</p>
+      </div>
+      <!-- Write a Review Modal Trigger Button -->
+      <button id="open-review-modal-btn" class="px-6 py-3 bg-terracotta hover:bg-terracotta/90 text-white font-semibold rounded-full shadow-md transition-all flex items-center gap-2 text-sm">
+        <i class="fa-solid fa-pen-to-square"></i> Write a Review
+      </button>
+    </div>
+
+    <!-- Success Banner after Review Submission -->
+    <div id="review-success-banner" class="hidden mb-8 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl text-emerald-800 text-sm flex items-center justify-between shadow-sm">
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-emerald-600 text-xl"></i>
+        <div>
+          <span class="font-bold">Thank you for your feedback!</span>
+          <p class="text-xs text-emerald-700">Your review has been successfully submitted to our Google Sheet and added below.</p>
+        </div>
+      </div>
+      <button id="close-success-banner" class="text-emerald-500 hover:text-emerald-700 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Reviews Grid Container -->
+    <div id="reviews-list" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Starts clean without fake reviews -->
+      <div id="no-reviews-msg" class="col-span-full text-center py-12 bg-white rounded-2xl border border-stone-200 p-6 text-stone-500 text-sm">
+        No customer reviews yet. Be the first to submit your feedback using the "Write a Review" button above!
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Legacy Section -->
+  <section id="about" class="bg-sage/30 py-16 my-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-stone-300">
+        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=800&auto=format&fit=crop" alt="Store Tradition" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x450/FAF9F5/2D2D2D?text=Our+Store'">
+      </div>
+      <div class="space-y-6">
+        <span class="text-terracotta uppercase tracking-widest text-xs font-bold">Store Legacy</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">Nihalchand Naraindas Stationers & Opticals</h2>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+          For decades, Nihalchand Naraindas has stood as a hallmark of trust and exceptional service. Combining the finest crafted writing instruments with precision optical frames and lenses, we take pride in serving our community with personal care and curated elegance.
+        </p>
+        <div class="grid grid-cols-2 gap-6 pt-2">
+          <div>
+            <h3 class="font-serif text-3xl font-bold text-terracotta">100%</h3>
+            <p class="text-xs text-stone-600 mt-1 uppercase tracking-wider font-semibold">Genuine Products</p>
+          </div>
+          <div>
+            <h3 class="font-serif text-3xl font-bold text-terracotta">10k+</h3>
+            <p class="text-xs text-stone-600 mt-1 uppercase tracking-wider font-semibold">Satisfied Clients</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Write a Review Modal -->
+<div id="review-modal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden flex items-center justify-center p-4 transition-opacity">
+  <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-stone-200">
+    <div class="flex items-center justify-between pb-4 border-b border-stone-100 mb-6">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-full bg-blush flex items-center justify-center text-terracotta font-bold text-sm">
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl font-bold text-charcoal">Write a Review</h3>
+          <p class="text-xs text-stone-500">Your feedback will be saved into our Google Sheet</p>
+        </div>
+      </div>
+      <button id="close-review-modal-btn" class="p-2 text-stone-400 hover:text-charcoal transition-colors">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Review Form -->
+    <form id="review-form" class="space-y-5">
+      <div>
+        <label for="review-name" class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1">Your Full Name</label>
+        <input type="text" id="review-name" required placeholder="e.g. Rahul Sharma" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 focus:outline-none focus:border-terracotta text-sm">
+      </div>
+
+      <div>
+        <label for="review-category" class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1">Category Selected</label>
+        <select id="review-category" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 focus:outline-none focus:border-terracotta text-sm bg-white">
+          <option value="Stationery & Writing">Stationery & Writing</option>
+          <option value="Eyeglasses & Opticals">Eyeglasses & Opticals</option>
+          <option value="Store Customer Service">Store Customer Service</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1">Star Rating</label>
+        <div id="star-rating-picker" class="flex items-center gap-2 text-stone-300 text-2xl cursor-pointer">
+          <i class="fa-solid fa-star hover:text-amber-400 transition-colors" data-rating="1"></i>
+          <i class="fa-solid fa-star hover:text-amber-400 transition-colors" data-rating="2"></i>
+          <i class="fa-solid fa-star hover:text-amber-400 transition-colors" data-rating="3"></i>
+          <i class="fa-solid fa-star hover:text-amber-400 transition-colors" data-rating="4"></i>
+          <i class="fa-solid fa-star hover:text-amber-400 transition-colors" data-rating="5"></i>
+        </div>
+        <input type="hidden" id="selected-rating" value="5">
+      </div>
+
+      <div>
+        <label for="review-message" class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-1">Your Feedback / Review</label>
+        <textarea id="review-message" rows="4" required placeholder="Write your experience with our products or service..." class="w-full px-4 py-2.5 rounded-xl border border-stone-300 focus:outline-none focus:border-terracotta text-sm resize-none"></textarea>
+      </div>
+
+      <div class="pt-2">
+        <button type="submit" id="submit-review-btn" class="w-full py-3.5 bg-terracotta hover:bg-terracotta/90 text-white font-semibold rounded-full shadow-md transition-all text-sm flex items-center justify-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i> Submit Review
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Wishlist Drawer Overlay -->
+<div id="wishlist-drawer" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden transition-opacity">
+  <div id="wishlist-drawer-panel" class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-cream shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300">
+    <!-- Wishlist Header -->
+    <div class="p-6 border-b border-stone-200 flex items-center justify-between bg-white">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-heart text-red-500 text-lg"></i>
+        <h3 class="font-serif text-xl font-bold text-charcoal">Saved Wishlist</h3>
+        <span id="wishlist-count-pill" class="bg-red-50 text-red-600 text-xs font-bold px-2.5 py-0.5 rounded-full border border-red-100">0 items</span>
+      </div>
+      <button id="wishlist-close-btn" class="p-2 text-stone-400 hover:text-charcoal transition-colors">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Wishlist Items List -->
+    <div id="wishlist-items-container" class="flex-grow overflow-y-auto p-6 space-y-4 divide-y divide-stone-100"></div>
+
+    <!-- Wishlist Empty State -->
+    <div id="wishlist-empty" class="hidden flex-grow flex flex-col items-center justify-center p-8 text-center">
+      <div class="w-16 h-16 bg-red-50 text-red-400 rounded-full flex items-center justify-center mb-4 text-2xl">
+        <i class="fa-regular fa-heart"></i>
+      </div>
+      <h4 class="font-serif text-lg font-bold text-charcoal">Your Wishlist is empty</h4>
+      <p class="text-stone-500 text-sm mt-1 mb-6">Click the heart icon on stationery or optical products to save them for easy WhatsApp inquiry.</p>
+      <button id="close-wishlist-empty-btn" class="px-6 py-2.5 bg-terracotta text-white rounded-full text-sm font-medium shadow">
+        Browse Collection
+      </button>
+    </div>
+
+    <!-- Wishlist Footer & WhatsApp Direct Inquiry -->
+    <div id="wishlist-footer" class="p-6 border-t border-stone-200 bg-white space-y-4">
+      <p class="text-xs text-stone-500 text-center">
+        Send saved wishlist items directly to Nihalchand Naraindas on WhatsApp for pricing & availability.
+      </p>
+      <button id="inquire-wishlist-whatsapp-btn" class="w-full py-3.5 bg-whatsapp hover:bg-whatsappDark text-white rounded-full font-medium text-center shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2 text-sm">
+        <i class="fa-brands fa-whatsapp text-lg"></i> Inquire Wishlist on WhatsApp
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Sticky Floating WhatsApp Button -->
+<a href="https://wa.me/15550192834?text=Hello%20Nihalchand%20Naraindas%20Stationers%20%26%20Opticals%2C%20I%20have%20an%20inquiry." target="_blank" class="fixed bottom-6 right-6 z-40 bg-whatsapp hover:bg-whatsappDark text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 group" aria-label="WhatsApp Inquiry">
+  <i class="fa-brands fa-whatsapp text-2xl"></i>
+  <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 ease-in-out whitespace-nowrap text-xs font-semibold pl-0 group-hover:pl-2">
+            Chat on WhatsApp
+        </span>
+</a>
+
+<!-- Footer -->
+<footer class="bg-sand border-t border-stone-200 mt-20 pt-16 pb-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+    <div class="space-y-4">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-blush flex items-center justify-center text-terracotta">
+          <i class="fa-solid fa-feather text-sm"></i>
+        </div>
+        <span class="font-serif text-base font-bold">Nihalchand Naraindas</span>
+      </div>
+      <p class="text-stone-600 text-sm leading-relaxed">
+        Stationers & Opticals — Serving quality stationery products and prescription optical eyewear.
+      </p>
+    </div>
+    <div>
+      <h4 class="font-bold text-sm text-charcoal uppercase tracking-wider mb-4">Categories</h4>
+      <ul class="space-y-2.5 text-sm text-stone-600">
+        <li><a href="#shop" class="hover:text-terracotta transition-colors">Stationery & Writing</a></li>
+        <li><a href="#shop" class="hover:text-terracotta transition-colors">Eyeglasses & Frames</a></li>
+        <li><a href="#shop" class="hover:text-terracotta transition-colors">Polarized Sunglasses</a></li>
+        <li><a href="#shop" class="hover:text-terracotta transition-colors">Desk Accessories</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-sm text-charcoal uppercase tracking-wider mb-4">Customer Care</h4>
+      <ul class="space-y-2.5 text-sm text-stone-600">
+        <li><a href="https://wa.me/15550192834?text=Hi%2C%20I%20have%20an%20inquiry." target="_blank" class="hover:text-terracotta transition-colors">WhatsApp Assistance</a></li>
+        <li><a href="#about" class="hover:text-terracotta transition-colors">About Our Store</a></li>
+        <li><a href="#reviews" class="hover:text-terracotta transition-colors">Customer Reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-sm text-charcoal uppercase tracking-wider mb-4">Store Hours</h4>
+      <p class="text-sm text-stone-600 leading-relaxed">
+        Monday — Saturday: 10:00 AM - 8:30 PM<br>
+        Sunday: Closed
+      </p>
+      <div class="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-semibold">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> WhatsApp Support Active
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-stone-300/60 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500">
+    <p>&copy; 2026 Nihalchand Naraindas Stationers & Opticals. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Store Contact Number
+  const WHATSAPP_NUMBER = "15550192834";
+
+  // Connected Google Sheet Apps Script Deployment Web App URL
+  const GOOGLE_SHEET_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxj71aTS96a_D7ic9i9jkD4goxwgL8SqHcajHiWKKIBLgaZumvgkdBP7bgRTW2WrMz0LA/exec";
+
+  // Products Catalog
+  const products = [
+    {
+      id: 1,
+      name: "Japanese Tomoe River Leather Journal",
+      category: "Stationery",
+      price: 28.00,
+      rating: 4.9,
+      reviewsCount: 142,
+      image: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop",
+      badge: "Popular",
+      description: "Ultra-thin 52gsm Tomoe River paper bound in supple vegetable-tanned leather notebook."
+    },
+    {
+      id: 2,
+      name: "Handcrafted Brass Fountain Pen",
+      category: "Stationery",
+      price: 64.00,
+      rating: 4.8,
+      reviewsCount: 98,
+      image: "https://images.unsplash.com/photo-1585336261022-6fc0e25914a2?q=80&w=600&auto=format&fit=crop",
+      badge: "Top Choice",
+      description: "Solid raw brass body with a stainless steel fine nib for smooth fountain pen ink writing."
+    },
+    {
+      id: 3,
+      name: "Classic Acetate Optical Frame",
+      category: "Eyeglasses",
+      price: 85.00,
+      rating: 4.9,
+      reviewsCount: 76,
+      image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?q=80&w=600&auto=format&fit=crop",
+      badge: "New Optics",
+      description: "Premium lightweight acetate spectacles frame suitable for single vision and progressive lenses."
+    },
+    {
+      id: 4,
+      name: "Vintage Aviator Polarized Sunglasses",
+      category: "Sunglasses",
+      price: 95.00,
+      rating: 5.0,
+      reviewsCount: 110,
+      image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop",
+      badge: "UV400",
+      description: "Full metal aviator sunglasses with 100% UV protection and polarized glare reduction."
+    },
+    {
+      id: 5,
+      name: "Anti-Blue Light Reading Glasses",
+      category: "Eyeglasses",
+      price: 42.00,
+      rating: 4.7,
+      reviewsCount: 84,
+      image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80&w=600&auto=format&fit=crop",
+      badge: "Eye Protection",
+      description: "Ergonomic blue light blocking specs designed for long computer screen hours."
+    },
+    {
+      id: 6,
+      name: "Undated Linen Weekly Planner",
+      category: "Stationery",
+      price: 32.00,
+      rating: 4.9,
+      reviewsCount: 210,
+      image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=600&auto=format&fit=crop",
+      badge: "Featured",
+      description: "Cloth-bound weekly schedule planner diary with thick recycled cream pages."
+    },
+    {
+      id: 7,
+      name: "Minimalist Geometric Brass Ruler",
+      category: "Desk Accessories",
+      price: 18.50,
+      rating: 4.7,
+      reviewsCount: 56,
+      image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=600&auto=format&fit=crop",
+      badge: null,
+      description: "Heavyweight cast brass straightedge ruler with millimeter and inch precision."
+    },
+    {
+      id: 8,
+      name: "Ceramic Minimalist Pen Holder",
+      category: "Desk Accessories",
+      price: 24.00,
+      rating: 4.6,
+      reviewsCount: 39,
+      image: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=600&auto=format&fit=crop",
+      badge: null,
+      description: "Hand-thrown stoneware pen stand container with a matte glaze finish."
+    }
+  ];
+
+  // Clean Reviews Array (starts empty)
+  let reviewsList = [];
+
+  // State Variables
+  let wishlist = [];
+  let currentCategory = 'all';
+  let searchQuery = '';
+
+  // DOM Elements
+  const productGrid = document.getElementById('product-grid');
+  const noProducts = document.getElementById('no-products');
+
+  const wishlistDrawer = document.getElementById('wishlist-drawer');
+  const wishlistDrawerPanel = document.getElementById('wishlist-drawer-panel');
+  const wishlistToggleBtn = document.getElementById('wishlist-toggle-btn');
+  const wishlistCloseBtn = document.getElementById('wishlist-close-btn');
+  const wishlistBadge = document.getElementById('wishlist-badge');
+  const wishlistCountPill = document.getElementById('wishlist-count-pill');
+  const wishlistItemsContainer = document.getElementById('wishlist-items-container');
+  const wishlistEmpty = document.getElementById('wishlist-empty');
+  const wishlistFooter = document.getElementById('wishlist-footer');
+  const closeWishlistEmptyBtn = document.getElementById('close-wishlist-empty-btn');
+  const inquireWishlistWhatsappBtn = document.getElementById('inquire-wishlist-whatsapp-btn');
+
+  // Search DOM Elements
+  const searchToggleBtn = document.getElementById('search-toggle-btn');
+  const searchContainer = document.getElementById('search-container');
+  const searchInput = document.getElementById('search-input');
+  const searchCloseBtn = document.getElementById('search-close-btn');
+  const clearSearchBtn = document.getElementById('clear-search-btn');
+  const searchSuggestions = document.getElementById('search-suggestions');
+  const searchStatusBanner = document.getElementById('search-status-banner');
+  const activeSearchQuery = document.getElementById('active-search-query');
+  const clearSearchBannerBtn = document.getElementById('clear-search-banner-btn');
+
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const resetFilterBtn = document.getElementById('reset-filter-btn');
+
+  // Review Modal Elements
+  const reviewsContainer = document.getElementById('reviews-list');
+  const openReviewModalBtn = document.getElementById('open-review-modal-btn');
+  const closeReviewModalBtn = document.getElementById('close-review-modal-btn');
+  const reviewModal = document.getElementById('review-modal');
+  const reviewForm = document.getElementById('review-form');
+  const submitReviewBtn = document.getElementById('submit-review-btn');
+  const starRatingPicker = document.getElementById('star-rating-picker');
+  const selectedRatingInput = document.getElementById('selected-rating');
+  const reviewSuccessBanner = document.getElementById('review-success-banner');
+  const closeSuccessBanner = document.getElementById('close-success-banner');
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderProducts();
+    renderReviews();
+    updateWishlistUI();
+
+    // Review Modal Controls
+    openReviewModalBtn.addEventListener('click', openReviewModal);
+    closeReviewModalBtn.addEventListener('click', closeReviewModal);
+    reviewModal.addEventListener('click', (e) => {
+      if (e.target === reviewModal) closeReviewModal();
+    });
+
+    setupStarPicker();
+    reviewForm.addEventListener('submit', handleReviewSubmit);
+
+    if (closeSuccessBanner) {
+      closeSuccessBanner.addEventListener('click', () => {
+        reviewSuccessBanner.classList.add('hidden');
+      });
+    }
+
+    // Wishlist Controls
+    wishlistToggleBtn.addEventListener('click', openWishlist);
+    wishlistCloseBtn.addEventListener('click', closeWishlist);
+    wishlistDrawer.addEventListener('click', (e) => {
+      if (e.target === wishlistDrawer) closeWishlist();
+    });
+    closeWishlistEmptyBtn.addEventListener('click', closeWishlist);
+    inquireWishlistWhatsappBtn.addEventListener('click', inquireWishlistOnWhatsApp);
+
+    // Functional Search Engine Listeners
+    searchToggleBtn.addEventListener('click', toggleSearch);
+    searchCloseBtn.addEventListener('click', toggleSearch);
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.trim();
+      searchQuery = query.toLowerCase();
+
+      if (query.length > 0) {
+        clearSearchBtn.classList.remove('hidden');
+        renderSearchSuggestions(query);
+      } else {
+        clearSearchBtn.classList.add('hidden');
+        searchSuggestions.classList.add('hidden');
+      }
+
+      renderProducts();
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        searchSuggestions.classList.add('hidden');
+        document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    clearSearchBtn.addEventListener('click', clearSearch);
+    clearSearchBannerBtn.addEventListener('click', clearSearch);
+
+    // Hide suggestions on outside click
+    document.addEventListener('click', (e) => {
+      if (!searchContainer.contains(e.target)) {
+        searchSuggestions.classList.add('hidden');
+      }
+    });
+
+    // Mobile Navigation Controls
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) closeMobileMenu();
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Category Filter Controls
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.cat-btn').forEach(b => {
+          b.classList.remove('bg-terracotta', 'text-white', 'shadow-sm');
+          b.classList.add('bg-white', 'hover:bg-stone-100', 'text-stone-700', 'border', 'border-stone-200');
+        });
+        e.target.classList.remove('bg-white', 'hover:bg-stone-100', 'text-stone-700', 'border', 'border-stone-200');
+        e.target.classList.add('bg-terracotta', 'text-white', 'shadow-sm');
+
+        currentCategory = e.target.getAttribute('data-category');
+        renderProducts();
+      });
+    });
+
+    resetFilterBtn.addEventListener('click', clearSearch);
+  });
+
+  function renderSearchSuggestions(query) {
+    const matches = products.filter(p =>
+      p.name.toLowerCase().includes(query.toLowerCase()) ||
+      p.category.toLowerCase().includes(query.toLowerCase()) ||
+      p.description.toLowerCase().includes(query.toLowerCase())
+    );
+
+    if (matches.length === 0) {
+      searchSuggestions.innerHTML = `
+                    <div class="p-4 text-center text-xs text-stone-500">
+                        No matching stationery or optical products found for "${query}"
+                    </div>
+                `;
+    } else {
+      searchSuggestions.innerHTML = matches.map(item => {
+        const waMsg = encodeURIComponent(`Hello Nihalchand Naraindas Stationers & Opticals, I am interested in inquiring about "${item.name}" ($${item.price.toFixed(2)}).`);
+        return `
+                        <div class="p-3 hover:bg-stone-50 cursor-pointer flex items-center justify-between transition-colors suggestion-item" onclick="selectSearchSuggestion('${item.name}')">
+                            <div class="flex items-center gap-3">
+                                <img src="${item.image}" alt="${item.name}" class="w-10 h-10 object-cover rounded-lg bg-stone-100">
+                                <div>
+                                    <h5 class="text-xs font-bold text-charcoal leading-tight">${highlightText(item.name, query)}</h5>
+                                    <span class="text-[10px] text-stone-500 uppercase tracking-wider">${item.category} • $${item.price.toFixed(2)}</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${waMsg}" target="_blank" onclick="event.stopPropagation()" class="px-2.5 py-1 bg-whatsapp text-white rounded-full text-[10px] font-semibold flex items-center gap-1 shadow-sm hover:bg-whatsappDark">
+                                <i class="fa-brands fa-whatsapp"></i> Inquire
+                            </a>
+                        </div>
+                    `;
+      }).join('');
+    }
+
+    searchSuggestions.classList.remove('hidden');
+  }
+
+  function highlightText(text, query) {
+    if (!query) return text;
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<span class="bg-amber-100 text-terracotta font-extrabold">$1</span>');
+  }
+
+  function selectSearchSuggestion(productName) {
+    searchInput.value = productName;
+    searchQuery = productName.toLowerCase();
+    searchSuggestions.classList.add('hidden');
+    renderProducts();
+    document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function clearSearch() {
+    searchQuery = '';
+    searchInput.value = '';
+    clearSearchBtn.classList.add('hidden');
+    searchSuggestions.classList.add('hidden');
+    searchStatusBanner.classList.add('hidden');
+    currentCategory = 'all';
+
+    document.querySelectorAll('.cat-btn').forEach(b => {
+      if (b.getAttribute('data-category') === 'all') {
+        b.classList.remove('bg-white', 'hover:bg-stone-100', 'text-stone-700', 'border', 'border-stone-200');
+        b.classList.add('bg-terracotta', 'text-white', 'shadow-sm');
+      } else {
+        b.classList.add('bg-white', 'hover:bg-stone-100', 'text-stone-700', 'border', 'border-stone-200');
+        b.classList.remove('bg-terracotta', 'text-white', 'shadow-sm');
+      }
+    });
+
+    renderProducts();
+  }
+
+  function toggleSearch() {
+    searchContainer.classList.toggle('hidden');
+    if (!searchContainer.classList.contains('hidden')) {
+      searchInput.focus();
+    } else {
+      searchSuggestions.classList.add('hidden');
+    }
+  }
+
+  function renderProducts() {
+    productGrid.innerHTML = '';
+
+    if (searchQuery.length > 0) {
+      searchStatusBanner.classList.remove('hidden');
+      activeSearchQuery.textContent = searchInput.value.trim();
+    } else {
+      searchStatusBanner.classList.add('hidden');
+    }
+
+    const filtered = products.filter(product => {
+      const matchesCategory = currentCategory === 'all' || product.category === currentCategory;
+      const matchesSearch = searchQuery === '' ||
+        product.name.toLowerCase().includes(searchQuery) ||
+        product.description.toLowerCase().includes(searchQuery) ||
+        product.category.toLowerCase().includes(searchQuery);
+      return matchesCategory && matchesSearch;
+    });
+
+    if (filtered.length === 0) {
+      noProducts.classList.remove('hidden');
+      return;
+    } else {
+      noProducts.classList.add('hidden');
+    }
+
+    filtered.forEach(product => {
+      const isWishlisted = wishlist.some(item => item.id === product.id);
+      const card = document.createElement('div');
+      card.className = 'bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col justify-between group';
+
+      const waMessage = encodeURIComponent(`Hello Nihalchand Naraindas Stationers & Opticals, I would like to inquire about "${product.name}" ($${product.price.toFixed(2)}).`);
+
+      card.innerHTML = `
+                    <div class="relative overflow-hidden aspect-[4/3] bg-stone-100">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x300/F3EFEA/2D2D2D?text=Product'">
+                        ${product.badge ? `<span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-terracotta text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">${product.badge}</span>` : ''}
+
+                        <button onclick="toggleWishlist(${product.id})" class="absolute top-3 right-3 w-9 h-9 ${isWishlisted ? 'bg-red-500 text-white' : 'bg-white/90 text-stone-600 hover:text-red-500'} rounded-full shadow flex items-center justify-center transition-all" aria-label="Save to Wishlist">
+                            <i class="${isWishlisted ? 'fa-solid' : 'fa-regular'} fa-heart text-sm"></i>
+                        </button>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-stone-500 mb-1">
+                                <span class="uppercase tracking-wider font-semibold">${product.category}</span>
+                                <div class="flex items-center gap-1 text-amber-500 font-semibold">
+                                    <i class="fa-solid fa-star text-[10px]"></i>
+                                    <span>${product.rating}</span>
+                                </div>
+                            </div>
+                            <h3 class="font-serif text-lg font-bold text-charcoal group-hover:text-terracotta transition-colors line-clamp-1">${highlightText(product.name, searchQuery)}</h3>
+                            <p class="text-stone-600 text-xs mt-1.5 line-clamp-2 leading-relaxed">${product.description}</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between gap-2">
+                            <span class="font-serif text-xl font-bold text-charcoal">$${product.price.toFixed(2)}</span>
+
+                            <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}" target="_blank" class="px-3.5 py-2 bg-whatsapp hover:bg-whatsappDark text-white text-xs font-semibold rounded-full transition-all flex items-center gap-1.5 shadow-sm">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Inquire
+                            </a>
+                        </div>
+                    </div>
+                `;
+      productGrid.appendChild(card);
+    });
+  }
+
+  function toggleWishlist(productId) {
+    const index = wishlist.findIndex(item => item.id === productId);
+    if (index > -1) {
+      wishlist.splice(index, 1);
+    } else {
+      const product = products.find(p => p.id === productId);
+      if (product) wishlist.push(product);
+    }
+    updateWishlistUI();
+    renderProducts();
+  }
+
+  function removeFromWishlist(productId) {
+    wishlist = wishlist.filter(item => item.id !== productId);
+    updateWishlistUI();
+    renderProducts();
+  }
+
+  function updateWishlistUI() {
+    const count = wishlist.length;
+    wishlistBadge.textContent = count;
+    wishlistCountPill.textContent = `${count} item${count !== 1 ? 's' : ''}`;
+
+    if (count === 0) {
+      wishlistItemsContainer.classList.add('hidden');
+      wishlistFooter.classList.add('hidden');
+      wishlistEmpty.classList.remove('hidden');
+    } else {
+      wishlistItemsContainer.classList.remove('hidden');
+      wishlistFooter.classList.remove('hidden');
+      wishlistEmpty.classList.add('hidden');
+
+      wishlistItemsContainer.innerHTML = '';
+      wishlist.forEach(item => {
+        const waItemMsg = encodeURIComponent(`Hello Nihalchand Naraindas Stationers & Opticals, I want to inquire about "${item.name}" ($${item.price.toFixed(2)}).`);
+        const div = document.createElement('div');
+        div.className = 'py-4 flex items-center gap-4';
+        div.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-xl bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100x100/F3EFEA/2D2D2D?text=Item'">
+                        <div class="flex-grow">
+                            <h4 class="font-serif font-bold text-sm text-charcoal line-clamp-1">${item.name}</h4>
+                            <span class="text-xs text-stone-500">$${item.price.toFixed(2)}</span>
+                            <div class="flex items-center justify-between mt-2">
+                                <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${waItemMsg}" target="_blank" class="text-xs font-semibold text-whatsapp hover:underline flex items-center gap-1">
+                                    <i class="fa-brands fa-whatsapp"></i> Direct Inquiry
+                                </a>
+                                <button onclick="removeFromWishlist(${item.id})" class="text-stone-400 hover:text-red-500 transition-colors text-xs p-1">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+        wishlistItemsContainer.appendChild(div);
+      });
+    }
+  }
+
+  function inquireWishlistOnWhatsApp() {
+    if (wishlist.length === 0) return;
+
+    let message = "Hello Nihalchand Naraindas Stationers & Opticals! I would like to inquire about the following wishlist items:\n\n";
+    wishlist.forEach((item, index) => {
+      message += `${index + 1}. ${item.name} ($${item.price.toFixed(2)})\n`;
+    });
+    message += "\nPlease share availability, pricing, and ordering options.";
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+
+  function openWishlist() {
+    wishlistDrawer.classList.remove('hidden');
+    setTimeout(() => {
+      wishlistDrawerPanel.classList.remove('translate-x-full');
+    }, 10);
+  }
+
+  function closeWishlist() {
+    wishlistDrawerPanel.classList.add('translate-x-full');
+    setTimeout(() => {
+      wishlistDrawer.classList.add('hidden');
+    }, 300);
+  }
+
+  function openMobileMenu() {
+    mobileMenu.classList.remove('hidden');
+    setTimeout(() => {
+      mobileMenuPanel.classList.remove('-translate-x-full');
+    }, 10);
+  }
+
+  function closeMobileMenu() {
+    mobileMenuPanel.classList.add('-translate-x-full');
+    setTimeout(() => {
+      mobileMenu.classList.add('hidden');
+    }, 300);
+  }
+
+  function renderReviews() {
+    reviewsContainer.innerHTML = '';
+
+    // Filter to ONLY show 5-star reviews on the website
+    const fiveStarReviews = reviewsList.filter(review => parseInt(review.rating) === 5);
+
+    if (fiveStarReviews.length === 0) {
+      reviewsContainer.innerHTML = `
+                    <div id="no-reviews-msg" class="col-span-full text-center py-12 bg-white rounded-2xl border border-stone-200 p-6 text-stone-500 text-sm">
+                        No 5-star customer reviews yet. Be the first to submit your feedback using the "Write a Review" button above!
+                    </div>
+                `;
+      return;
+    }
+
+    fiveStarReviews.forEach(review => {
+      const starsHtml = Array.from({ length: 5 }, (_, i) =>
+        `<i class="fa-solid fa-star ${i < review.rating ? 'text-amber-400' : 'text-stone-200'}"></i>`
+      ).join('');
+
+      const initials = review.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+
+      const div = document.createElement('div');
+      div.className = 'bg-white p-8 rounded-2xl shadow-sm border border-stone-200/80 flex flex-col justify-between';
+      div.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-1 text-sm">
+                                ${starsHtml}
+                            </div>
+                            <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-sand text-stone-600">${review.category}</span>
+                        </div>
+                        <p class="font-serif text-stone-700 italic text-base leading-relaxed">
+                            "${review.message}"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blush flex items-center justify-center font-bold text-terracotta text-sm">
+                            ${initials}
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-charcoal">${review.name}</h4>
+                            <span class="text-xs text-stone-500">${review.role || 'Verified Reviewer'}</span>
+                        </div>
+                    </div>
+                `;
+      reviewsContainer.appendChild(div);
+    });
+  }
+
+  function setupStarPicker() {
+    const stars = starRatingPicker.querySelectorAll('i');
+    setStarHighlight(5);
+
+    stars.forEach(star => {
+      star.addEventListener('click', (e) => {
+        const rating = parseInt(e.target.getAttribute('data-rating'));
+        selectedRatingInput.value = rating;
+        setStarHighlight(rating);
+      });
+    });
+  }
+
+  function setStarHighlight(rating) {
+    const stars = starRatingPicker.querySelectorAll('i');
+    stars.forEach((s, idx) => {
+      if (idx < rating) {
+        s.classList.remove('text-stone-300');
+        s.classList.add('text-amber-400');
+      } else {
+        s.classList.remove('text-amber-400');
+        s.classList.add('text-stone-300');
+      }
+    });
+  }
+
+  async function handleReviewSubmit(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('review-name').value.trim();
+    const category = document.getElementById('review-category').value;
+    const rating = parseInt(selectedRatingInput.value);
+    const message = document.getElementById('review-message').value.trim();
+
+    if (!name || !message) return;
+
+    // UI Loading state
+    submitReviewBtn.disabled = true;
+    submitReviewBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Submitting...`;
+
+    const payload = {
+      name: name,
+      rating: rating,
+      category: category,
+      comment: message
+    };
+
+    try {
+      // Post directly to the connected Google Apps Script URL
+      await fetch(GOOGLE_SHEET_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Standard cross-origin setting for Apps Script Web App
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      // Prepend submitted review locally
+      const newReview = {
+        id: Date.now(),
+        name: name,
+        role: "Verified Reviewer",
+        rating: rating,
+        category: category,
+        message: message
+      };
+
+      reviewsList.unshift(newReview);
+      renderReviews();
+      closeReviewModal();
+      reviewForm.reset();
+      setStarHighlight(5);
+      selectedRatingInput.value = 5;
+
+      reviewSuccessBanner.classList.remove('hidden');
+      reviewSuccessBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    } catch (error) {
+      console.error("Error submitting review to Google Sheet:", error);
+      alert("An error occurred while connecting to Google Sheet. Please check your web connection.");
+    } finally {
+      submitReviewBtn.disabled = false;
+      submitReviewBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> Submit Review`;
+    }
+  }
+
+  function openReviewModal() {
+    reviewModal.classList.remove('hidden');
+  }
+
+  function closeReviewModal() {
+    reviewModal.classList.add('hidden');
+  }
+</script>
+</body>
+</html>
